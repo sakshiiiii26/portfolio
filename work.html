@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Demonstration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Dynamic Background Styles */
+        .work-bg {
+            position: relative;
+            padding: 80px 0;
+            background: linear-gradient(135deg, #021530 0%, #04162c 100%);
+            overflow: hidden;
+        }
+
+        .work-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(100, 255, 218, 0.08) 0%, transparent 25%),
+                radial-gradient(circle at 80% 70%, rgba(77, 180, 253, 0.08) 0%, transparent 25%);
+            z-index: 0;
+            animation: pulse 15s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.5; }
+            100% { transform: scale(1.05); opacity: 0.8; }
+        }
+
+        /* Timeline Design */
+        .work-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .work-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .work-header h2 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #64ffda, #4db5ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 10px rgba(100, 255, 218, 0.2);
+        }
+
+        .work-header p {
+            font-size: 1.2rem;
+            color: #a8b2d1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, #64ffda, #4db5ff, transparent);
+        }
+
+        .experience {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 60px;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .experience.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .experience:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .experience-content {
+            width: calc(50% - 40px);
+            padding: 30px;
+            background: rgba(17, 34, 64, 0.7);
+            border-radius: 15px;
+            border: 1px solid rgba(100, 255, 218, 0.2);
+            box-shadow: 0 10px 30px rgba(2, 12, 27, 0.5);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .experience:hover .experience-content {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(2, 12, 27, 0.7);
+            border-color: rgba(100, 255, 218, 0.4);
+        }
+
+        .experience-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #637da8, #446896);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #64ffda;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .experience h3 {
+            color: #64ffda;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .experience h3 i {
+            margin-right: 10px;
+        }
+
+        .experience .subtitle {
+            color: #a8b2d1;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .experience p {
+            color: #e6f1ff;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .highlights {
+            margin-top: 20px;
+        }
+
+        .highlights li {
+            color: #e6f1ff;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .highlights li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            background: #64ffda;
+            border-radius: 50%;
+        }
+
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .badge {
+            background: rgba(100, 255, 218, 0.1);
+            color: #64ffda;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(100, 255, 218, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+
+            .experience {
+                flex-direction: column !important;
+                margin-bottom: 40px;
+            }
+
+            .experience-content {
+                width: 100%;
+                margin-left: 60px;
+            }
+
+            .experience-icon {
+                left: 30px;
+                transform: none;
+            }
+
+            .work-header h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .work-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .experience-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="work-bg">
+        <div class="work-container">
+            <div class="work-header">
+                <h2><i class="fas fa-briefcase"></i> Work Demonstration</h2>
+                <div class="divider"></div>
+                <p>Key professional experiences that shaped my skills and expertise</p>
+            </div>
+
+            <div class="timeline">
+
+                <!-- AVCR Project -->
+                <div class="experience">
+                    <div class="experience-content">
+                        <h3><i class="fas fa-robot"></i> AVCR Project</h3>
+                        <span class="subtitle">Autonomous Vehicle for Calamity Rescue | 2023</span>
+                        <p>Developed an academic project focused on creating autonomous vehicles for disaster response and rescue operations.</p>
+                        <div class="highlights">
+                            <ul>
+                                <li>Handled backend development and system architecture</li>
+                                <li>Designed rescue algorithms and pathfinding systems</li>
+                                <li>Implemented sensor integration for obstacle detection</li>
+                                <li>Developed real-time disaster mapping capabilities</li>
+                            </ul>
+                        </div>
+                        <div class="badges">
+                            <span class="badge">Backend Development</span>
+                            <span class="badge">AI Algorithms</span>
+                            <span class="badge">System Architecture</span>
+                        </div>
+                    </div>
+                    <div class="experience-icon">
+                        <i class="fas fa-car-crash"></i>
+                    </div>
+                </div>
+
+                <!-- Ministory of power -->
+                <div class="experience">
+                    <div class="experience-content">
+                        <h3><i class="fas fa-robot"></i> TrueDoc</h3>
+                        <p>Document varification system</p>
+                        <div class="highlights">
+                            <ul>
+                                <li>Starting working on this project under Ministory of power</li>
+                                <li>working on ML and Backened</li>
+                            </ul>
+                        </div>
+                        <div class="badges">
+                            <span class="badge">Backend Development</span>
+                            <span class="badge">AI Algorithms</span>
+                        </div>
+                    </div>
+                    <div class="experience-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                </div>
+
+
+                <!-- E-Cell Experience -->
+                <div class="experience">
+                    <div class="experience-content">
+                        <h3><i class="fas fa-users"></i> E-Cell Founder</h3>
+                        <span class="subtitle">IPS Academy | 2022-2023</span>
+                        <p>Founded and led the Entrepreneurship Cell at IPS Academy in collaboration with IIT Bombay, fostering innovation and leadership among students.</p>
+                        <div class="highlights">
+                            <ul>
+                                <li>Learned leadership and organizational management skills</li>
+                                <li>Established official collaboration with IIT Bombay's E-Cell program</li>
+                                <li>Served as Campus Ambassador for entrepreneurial events</li>
+                                <li>Led team to become National Entrepreneurship Challenge (NEC) Finalists</li>
+                            </ul>
+                        </div>
+                        <div class="badges">
+                            <span class="badge">Leadership</span>
+                            <span class="badge">IIT Bombay Collaboration</span>
+                            <span class="badge">NEC Finalist</span>
+                        </div>
+                    </div>
+                    <div class="experience-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                </div>
+
+                
+
+                <!-- Virtual Internships -->
+                <div class="experience">
+                    <div class="experience-content">
+                        <h3><i class="fas fa-laptop-code"></i> Virtual Internships</h3>
+                        <span class="subtitle">Professional Development | 2022-2023</span>
+                        <p>Completed intensive virtual internships with leading organizations to enhance technical and professional skills.</p>
+                        <div class="highlights">
+                            <ul>
+                                <li><strong>Deloitte:</strong> Data Analytics
+                                    <ul style="margin-top: 8px; margin-left: 20px;">
+                                        <li>Data cleaning and preprocessing</li>
+                                        <li>Analytics dashboard development</li>
+                                        <li>Data visualization techniques</li>
+                                    </ul>
+                                </li>
+                                <li><strong>TAMIZAN:</strong> Skills Development
+                                    <ul style="margin-top: 8px; margin-left: 20px;">
+                                        <li>Professional communication</li>
+                                        <li>Project management</li>
+                                        <li>Technical skill enhancement</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="badges">
+                            <span class="badge">Data Analytics</span>
+                            <span class="badge">Data Visualization</span>
+                            <span class="badge">Professional Skills</span>
+                        </div>
+                    </div>
+                    <div class="experience-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Animation for experiences
+        document.addEventListener('DOMContentLoaded', function() {
+            const experiences = document.querySelectorAll('.experience');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            experiences.forEach(exp => {
+                observer.observe(exp);
+            });
+            
+            // Dynamic background elements
+            const workBg = document.querySelector('.work-bg');
+            for (let i = 0; i < 10; i++) {
+                const dot = document.createElement('div');
+                dot.style.position = 'absolute';
+                dot.style.width = '5px';
+                dot.style.height = '5px';
+                dot.style.background = 'rgba(100, 255, 218, 0.3)';
+                dot.style.borderRadius = '50%';
+                dot.style.top = Math.random() * 100 + '%';
+                dot.style.left = Math.random() * 100 + '%';
+                dot.style.animation = `float ${5 + Math.random() * 10}s infinite alternate`;
+                workBg.appendChild(dot);
+            }
+        });
+    </script>
+</body>
+</html>

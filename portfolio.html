@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakshi Sharma | AI/Data Science Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Sakshi Sharma</div>
+            <div class="nav-links">
+                <a href="#certificate">certificate</a>
+                <a href="#work">work</a>
+                <a href="#projects">Projects</a>
+                <a href="#journey">Journey</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    <header id="home">
+        <div class="cyber-grid"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Sakshi Sharma</h1>
+                <div class="typewriter">Data Scientist | AI Engineer | Problem Solver</div>
+                <p>I'm a passionate and driven technology enthusiast with hands-on experience in Data science, machine learning, full-stack development and IoT integrations. I enjoy building impactful projects that solve real-world problems—ranging from AI-powered fraud detection systems to environmental monitoring platforms. With a strong foundation in Python, C++, Flask, and modern web technologies, I bring together software engineering and AI to create practical and intelligent solutions. I'm currently exploring advanced domains like federated learning, satellite image analysis, Pollution monitoring to push the boundaries of what possible.</p>
+                <div class="btn-group">
+                    <a href="#projects" class="btn">View Projects</a><br>
+                    <a href="https://leetcode.com/profile/" class="btn">Leetcode</a><br>
+                    <a href="SAKSHI SHARMA Resume.pdf" class="btn">view resume</a>
+                </div>
+            </div>
+            <div class="hero-image" >
+                <img src="images\Profile pic.jpg" alt="Sakshi Sharma">
+            </div>
+        </div>
+
+    </header>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="project-grid">
+                <!-- AVCR Project -->
+                <div class="project-card" onclick="openModal('avcr')">
+                    <img src="https://5.imimg.com/data5/SELLER/Default/2024/9/450197758/XA/WB/NF/226713088/confined-space-drone-inspection-gps-denied-drone.jpg" alt="AVCR System" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">AVCR</h3>
+                        <p>Autonomous Vehicle for Calamity Rescue with real-time gas detection</p>
+                        <div class="tech-stack">
+                            <span class="tech-item">Jetson Nano</span>
+                            <span class="tech-item">LSTM</span>
+                            <span class="tech-item">ESP32</span>
+                            <span class="tech-item">Flask</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Amazon Sales ML -->
+                <div class="project-card" onclick="openModal('amazon-ml')">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Amazon ML" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Amazon Sales ML</h3>
+                        <p>Regression model predicting sales based on discount patterns</p>
+                        <div class="tech-stack">
+                            <span class="tech-item">Python</span>
+                            <span class="tech-item">Scikit-learn</span>
+                            <span class="tech-item">Pandas</span>
+                            <span class="tech-item">Power BI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fraud Detector -->
+                <div class="project-card" onclick="openModal('fraud-detector')">
+                    <img src="https://developer-blogs.nvidia.com/wp-content/uploads/2024/10/fsi-tech-blog-fraud-detection-blueprint-1920x1080-1.jpg" alt="Fraud Detection" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Subsidy Fraud Detector</h3>
+                        <p>AI model detecting suspicious subsidy claims with NLP</p>
+                        <div class="tech-stack">
+                            <span class="tech-item">Python</span>
+                            <span class="tech-item">NLP</span>
+                            <span class="tech-item">XGBoost</span>
+                            <span class="tech-item">Flask</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AVCR Modal -->
+    <div id="avcr-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('avcr')">&times;</span>
+            <h2>AVCR - Autonomous Vehicle for Calamity Rescue</h2>
+            
+            <div class="modal-tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'avcr-demo')">Demo</button>
+                <button class="tab-btn" onclick="openTab(event, 'avcr-code')">Code</button>
+                <button class="tab-btn" onclick="openTab(event, 'avcr-details')">Details</button>
+            </div>
+            
+            <div id="avcr-demo" class="tab-content active">
+                <h3>Project Demonstration</h3>
+                <div class="demo-gallery">
+                    <img src="https://5.imimg.com/data5/SELLER/Default/2024/9/450197758/XA/WB/NF/226713088/confined-space-drone-inspection-gps-denied-drone.jpg" alt="AVCR Hardware" class="demo-img">
+                    <img src="images\AVCR Dashboard.png" alt="Dashboard" class="demo-img">
+                </div>
+                <p>Real-time demo video:</p>
+                <div style="padding:56.25% 0 0 0;position:relative;">
+                    <iframe src="" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+            <div id="avcr-code" class="tab-content">
+                <h3>Key Code Snippets</h3>
+                <pre><code class="language-python">
+# Gas Level Prediction Model (LSTM)
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import LSTM, Dense
+
+model = Sequential([
+    LSTM(64, input_shape=(60, 5)),  # 60 timesteps, 5 sensor features
+    Dense(32, activation='relu'),
+    Dense(1)  # Predicts gas concentration
+])
+
+model.compile(optimizer='adam', loss='mse')
+model.fit(X_train, y_train, epochs=50)
+                </code></pre>
+                
+                <pre><code class="language-python">
+# ESP32 Sensor Data Collection
+import machine
+from machine import Pin, I2C
+import time
+
+mq2 = machine.ADC(Pin(34))
+dht = dht22.DHT22(Pin(14))
+
+while True:
+    gas = mq2.read()
+    temp, hum = dht.read()
+    data = f"{gas},{temp},{hum}"
+    send_via_lora(data)
+    time.sleep(1)
+                </code></pre>
+                
+                <a href="https://github.com/sakshiiiii26/AVCR" class="btn" target="_blank">View Full Repository</a>
+            </div>
+            
+            <div id="avcr-details" class="tab-content">
+                <h3>Project Details</h3>
+                <p><strong>Problem Statement:</strong> Early detection of hazardous gas leaks in disaster zones where human access is dangerous.</p>
+                
+                <p><strong>Solution:</strong></p>
+                <ul>
+                    <li>IoT vehicle with MQ2/MQ4 gas sensors and environmental sensors</li>
+                    <li>LSTM model predicts gas concentration trends</li>
+                    <li>Flask dashboard for real-time monitoring</li>
+                    <li>LoRa communication for remote areas</li>
+                </ul>
+                
+                <p><strong>Results:</strong></p>
+                <ul>
+                    <li>94% accuracy in gas level prediction</li>
+                    <li>30% faster response time compared to manual inspection</li>
+                    <li>Winner at Techno Maths & Science Exhibition 2024</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Amazon analysis -->
+    <div id="amazon-ml-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('amazon-ml')">&times;</span>
+            <h2>AVCR - Autonomous Vehicle for Calamity Rescue</h2>
+            
+            <div class="modal-tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'amazon-ml-demo')">Demo</button>
+                <button class="tab-btn" onclick="openTab(event, 'amazon-ml-code')">Code</button>
+                <button class="tab-btn" onclick="openTab(event, 'amazon-ml-details')">Details</button>
+            </div>
+            
+            <div id="amazon-ml-demo" class="tab-content active">
+                <h3>Project Demonstration</h3>
+                <div class="demo-gallery">
+                    <img src="https://github.com/sakshiiiii26/Amazon_ML_Analysis/blob/main/2025-04-14.png?raw=true" alt="Dashboard" class="demo-img">
+                    <img src="images\amazon home.png" alt="Dashboard" class="demo-img">
+                    <img src="images\amazon sales overview.png" alt="Dashboard" class="demo-img">
+                    <img src="images\customer overview.png" alt="Dashboard" class="demo-img">
+                    <img src="https://github.com/sakshiiiii26/Amazon_Sales_Analysis/blob/main/fulfillment%20analysis.png?raw=true" alt="Dashboard" class="demo-img">
+                    <img src="https://github.com/sakshiiiii26/Amazon_Sales_Analysis/blob/main/geographical%20analysis.png?raw=true" alt="Dashboard" class="demo-img">
+                    <img src="https://github.com/sakshiiiii26/Amazon_Sales_Analysis/blob/main/product%20analysis.png?raw=true" alt="Dashboard" class="demo-img">
+                    <img src="https://github.com/sakshiiiii26/Amazon_Sales_Analysis/blob/main/Insights.png?raw=true" alt="Dashboard" class="demo-img">
+                </div>
+            </div>
+            
+            <div id="amazon-ml-code" class="tab-content">
+                <h3>Key Code Snippets</h3>
+
+            
+                <pre><code class="language-python">
+                    # customer segmentation
+                    import pandas as pd
+                    from sklearn.cluster import KMeans
+                    from sklearn.preprocessing import StandardScaler
+
+                    df1 = NewDf
+
+                    X = df1[['discounted_price', 'rating_count']]
+                    # X = X.fillna(0)
+                    scaler = StandardScaler()
+                    X_scaled = scaler.fit_transform(X)
+
+                    kmeans = KMeans(n_clusters=3, random_state=42)
+                    df1['Customer_Segment'] = kmeans.fit_predict(X_scaled)
+                    NewDf['Customer_Segment'] = df1['Customer_Segment']
+                    output = NewDf
+                    output
+                </code></pre>
+                
+                <pre><code class="language-python">
+                    # sales prediction
+                    import numpy as np
+
+                    df = NewDf.copy()
+
+                    if 'sales' not in df.columns:
+                        df['sales'] = df['rating_count'] * df['discounted_price']
+
+                    df['log_sales'] = np.log1p(df['sales'])
+
+                    df['sales'] = df['sales'].astype(float)
+                    df['rating'] = df['rating'].astype(float)
+                    df['rating_count'] = df['rating_count'].astype(float)
+                </code></pre>
+                <a href="https://github.com/sakshiiiii26/Amazon_ML_Analysis" class="btn" target="_blank">View Full Repository Amazon ML</a><br>
+                <a href="https://github.com/sakshiiiii26/Amazon_Sales_Analysis" class="btn" target="_blank">View Full Repository Amazon Sales analysis</a>
+            </div>
+            
+            <div id="amazon-ml-details" class="tab-content">
+                <h3>Project Details</h3>
+                <p><strong>Problem Statement:</strong></p>
+                    <p>Sales performance declined after April 2022, with reduced daily sales and negative Month-over-Month (MoM) growth. Business needs data-driven strategies to revive sales momentum and optimize operations.</p>
+
+                    <p><strong>Solution:</strong></p>
+                    <ul>
+                        <li>Analyzed Monthly and Daily Sales trends to detect seasonal peaks and drops</li>
+                        <li>Tracked key KPIs like Average Order Value (₹609.34) and MoM Growth (-₹0.50)</li>
+                        <li>Suggested strategies to drive repeat purchases and reduce customer churn</li>
+                        <li>Identified underperforming regions and categories for targeted improvement</li>
+                    </ul>
+
+                    <p><strong>Results:</strong></p>
+                    <ul>
+                        <li>April identified as sales peak – ideal for campaign timing</li>
+                        <li>Actionable plans to recover from May–June decline using loyalty and discount programs</li>
+                        <li>Opportunities to increase Average Order Value through bundling and upselling</li>
+                        <li>Enhanced focus on consistent sales flow using weekday flash deals and reminder tactics</li>
+                    </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Subsidy Fraud Detection -->
+    <div id="fraud-detector-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('fraud-detector-ml')">&times;</span>
+            <h2>AVCR - Autonomous Vehicle for Calamity Rescue</h2>
+            
+            <div class="modal-tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'fraud-detector-demo')">Demo</button>
+                <button class="tab-btn" onclick="openTab(event, 'fraud-detector-code')">Code</button>
+                <button class="tab-btn" onclick="openTab(event, 'fraud-detector-details')">Details</button>
+            </div>
+            
+            <div id="fraud-detector-demo" class="tab-content active">
+                <h3>Project Demonstration</h3>
+                <p>Real-time demo video:</p>
+                <div style="padding:56.25% 0 0 0;position:relative;">
+                    <iframe src="images\subsidy_fraud_detection.ipynb - Colab - Google Chrome 2025-05-22 16-32-45.mp4" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+            <div id="fraud-detector-code" class="tab-content">
+                <h3>Key Code Snippets</h3>
+                <pre><code class="language-python">
+                # data generation
+                    import pandas as pd
+                    import numpy as np
+
+                    np.random.seed(42)
+                    n_samples = 5000
+                    data = pd.DataFrame({
+                    'applicant_income': np.random.normal(loc=35000, scale=8000, size=n_samples).clip(5000, 100000),
+                    'claimed_subsidy_amount': np.random.normal(loc=7000, scale=1500, size=n_samples).clip(1000, 15000),
+                    'land_owned_acres': np.random.uniform(0.2, 8.0, size=n_samples),
+                    'number_of_dependents': np.random.randint(0, 7, size=n_samples),
+                    'region': np.random.choice(['North', 'South', 'East', 'West'], size=n_samples),
+                    previous_claims': np.random.poisson(1.0, size=n_samples),
+                    'is_employed': np.random.choice([0, 1], size=n_samples, p=[0.3, 0.7])
+                        })
+                    </code></pre>
+                    <pre><code class="language-python">
+                    # data preprocessing
+                    import pandas as pd
+                    import numpy as np
+                    from sklearn.model_selection import train_test_split
+                    from sklearn.preprocessing import OneHotEncoder, StandardScaler
+                    from sklearn.ensemble import RandomForestClassifier
+                    from sklearn.metrics import classification_report, confusion_matrix
+
+                    # Load dataset
+                    df = pd.read_csv("synthetic_subsidy_data.csv")
+
+                    # Separate features and target
+                    X = df.drop("is_fraud", axis=1)
+                    y = df["is_fraud"]
+
+                    # One-hot encode categorical variables
+                    categorical_cols = ["subsidy_type", "location"]
+                    encoder = OneHotEncoder(sparse_output=False, drop="first")
+                    X_encoded = encoder.fit_transform(X[categorical_cols])
+
+                    # Drop original categorical columns and combine encoded features
+                    X_numeric = X.drop(columns=categorical_cols)
+                    X_final = np.concatenate([X_numeric.values, X_encoded], axis=1)
+
+                </code></pre>
+                <a href="https://github.com/sakshiiiii26/subsidy_fraud_detection" class="btn" target="_blank">View Full Repository</a>
+            </div>
+            
+            <div id="fraud-detector-details" class="tab-content">
+                <h3>Project Details</h3>
+                <p><strong>Problem Statement:</strong> Rising number of fraudulent claims in government subsidy programs causes financial losses and delays genuine aid delivery.</p>
+
+                    <p><strong>Solution:</strong></p>
+                    <ul>
+                        <li>Machine Learning model (Random Forest) trained on structured subsidy application data</li>
+                        <li>Web-based application with role-based login for applicants, officials, and admins</li>
+                        <li>Real-time fraud score prediction using Flask API</li>
+                        <li>Dashboard for fraud analytics and trend visualization</li>
+                    </ul>
+
+                    <p><strong>Results:</strong></p>
+                    <ul>
+                        <li>95% accuracy in detecting fraudulent applications using synthetic + modeled data</li>
+                        <li>Reduced manual verification effort by 60%</li>
+                        <li>Presented at DataHack 2025; shortlisted among top 5 national entries</li>
+                    </ul>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ===== work ===== -->
+    <section id="work">
+        <iframe src="work.html" width="100%" height="2300px" style="border: none;"></iframe>
+    </section>
+
+
+<!-- Skills section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical <span style="color: var(--neon-purple)">Proficiency</span></h2>
+            <div class="skills-container">
+                <!-- Machine Learning/AI -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-brain"></i> Machine Learning & AI</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Supervised Learning</span>
+                            <span>92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 92%; background: linear-gradient(90deg, var(--neon-blue), #00ff88);"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Anomaly Detection</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 88%; background: linear-gradient(90deg, var(--neon-blue), #00ff88);"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>NLP (Fraud Detector)</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%; background: linear-gradient(90deg, var(--neon-blue), #00ff88);"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Time-Series Forecasting (AVCR)</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%; background: linear-gradient(90deg, var(--neon-blue), #00ff88);"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Engineering -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> Data Engineering</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Python (Pandas/NumPy)</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%; background: linear-gradient(90deg, var(--neon-pink), #bd00ff);"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>SQL (Amazon Analysis)</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%; background: linear-gradient(90deg, var(--neon-pink), #bd00ff);"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Power BI/Tableau</span>
+                            <span>87%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 87%; background: linear-gradient(90deg, var(--neon-pink), #bd00ff);"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Data Visualization</span>
+                            <span>89%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 89%; background: linear-gradient(90deg, var(--neon-pink), #bd00ff);"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IoT & Embedded Systems -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-microchip"></i> IoT & Hardware</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Jetson Nano (AVCR)</span>
+                            <span>86%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 86%; background: linear-gradient(90deg, var(--matrix-green), #00f5ff);"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>ESP32 Programming</span>
+                            <span>84%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 84%; background: linear-gradient(90deg, var(--matrix-green), #00f5ff);"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Sensor Integration</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 88%; background: linear-gradient(90deg, var(--matrix-green), #00f5ff);"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>LoRa Communication</span>
+                            <span>82%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 82%; background: linear-gradient(90deg, var(--matrix-green), #00f5ff);"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Skills -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> Tools & Frameworks</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Flask (AVCR Dashboard)</span>
+                            <span>83%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 83%; background: linear-gradient(90deg, #ff9a00, #ff2d75);"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Git/GitHub</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%; background: linear-gradient(90deg, #ff9a00, #ff2d75);"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Excel (Advanced)</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 88%; background: linear-gradient(90deg, #ff9a00, #ff2d75);"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Scikit-learn</span>
+                            <span>91%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 91%; background: linear-gradient(90deg, #ff9a00, #ff2d75);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- ===== certificates ===== -->
+    <section id="certificate">
+        <iframe src="certification.html" width="100%" height="1100px" style="border: none;"></iframe>
+    </section>
+
+
+    <!-- ===== UPDATED TIMELINE SECTION ===== -->
+    <section id="journey" style="padding: 5rem 0; background: rgba(189,0,255,0.03);">
+        <div class="container">
+            <h2 class="section-title">My <span style="color: var(--neon-pink)">Journey</span></h2>
+            <div class="timeline" style="position: relative; max-width: 800px; margin: 0 auto; padding: 2rem 0;">
+                <!-- Timeline line -->
+                <div style="position: absolute; left: 50%; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, var(--neon-blue), var(--neon-pink)); transform: translateX(-50%);"></div>
+                
+                <!-- 1. B.A.D Talks -->
+                <div class="timeline-item" style="position: relative; margin-bottom: 3rem; width: 100%;">
+                    <div style="position: absolute; left: 50%; top: 15px; width: 20px; height: 20px; background: var(--neon-pink); border-radius: 50%; transform: translateX(-50%); z-index: 1;"></div>
+                    <div style="position: relative; width: calc(50% - 40px); padding: 1.5rem; background: rgba(26,29,36,0.7); border-radius: 10px; border: 1px solid rgba(255,45,117,0.2);">
+                        <h3 style="color: var(--neon-pink); margin-bottom: 0.5rem;">Core Team Member</h3>
+                        <p style="color: rgba(255,255,255,0.7);">B.A.D Talks - IPS Academy</p>
+                        <p style="color: var(--cyber-blue);">2024</p>
+                        <p style="margin-top: 0.5rem; color: rgba(255,255,255,0.8);">Started my leadership journey by organizing tech talks and workshops for students. Joined Bed Talks as a co-team member, collaborating on impactful discussions and gaining experience in event management and communication.</p>
+                    </div>
+                </div>
+                
+                <!-- 2. E-Cell Founder -->
+                <div class="timeline-item" style="position: relative; margin-bottom: 3rem; width: 100%; text-align: right;">
+                    <div style="position: absolute; left: 50%; top: 15px; width: 20px; height: 20px; background: var(--cyber-blue); border-radius: 50%; transform: translateX(-50%); z-index: 1;"></div>
+                    <div style="position: relative; left: calc(50% + 40px); width: calc(50% - 40px); padding: 1.5rem; background: rgba(26,29,36,0.7); border-radius: 10px; border: 1px solid rgba(0,245,255,0.2);">
+                        <h3 style="color: var(--cyber-blue); margin-bottom: 0.5rem;">Founder, E-Cell</h3>
+                        <p style="color: rgba(255,255,255,0.7);">IPS Academy x IIT Bombay</p>
+                        <p style="color: var(--neon-pink);">2024</p>
+                        <p style="margin-top: 0.5rem; color: rgba(255,255,255,0.8);">Established entrepreneurship cell to foster innovation and startup culture.</p>
+                    </div>
+                </div>
+                
+                <!-- 3. IITB Ambassador -->
+                <div class="timeline-item" style="position: relative; margin-bottom: 3rem; width: 100%;">
+                    <div style="position: absolute; left: 50%; top: 15px; width: 20px; height: 20px; background: var(--matrix-green); border-radius: 50%; transform: translateX(-50%); z-index: 1;"></div>
+                    <div style="position: relative; width: calc(50% - 40px); padding: 1.5rem; background: rgba(26,29,36,0.7); border-radius: 10px; border: 1px solid rgba(0,255,65,0.2);">
+                        <h3 style="color: var(--matrix-green); margin-bottom: 0.5rem;">Top 100 Campus Ambassador</h3>
+                        <p style="color: rgba(255,255,255,0.7);">Certificate of Merit: Ranked in the top 100 from IIT Bombay for completing the Campus Ambassador Program and securing a position in the top 100 on the global leaderboard.</p>
+                        <p style="color: var(--neon-pink);">2024</p>
+                    </div>
+                </div>
+                
+                <!-- 4. NEC Finalist-->
+                <div class="timeline-item" style="position: relative; margin-bottom: 3rem; width: 100%; text-align: right;">
+                    <div style="position: absolute; left: 50%; top: 15px; width: 20px; height: 20px; background: #bd00ff; border-radius: 50%; transform: translateX(-50%); z-index: 1;"></div>
+                    <div style="position: relative; left: calc(50% + 40px); width: calc(50% - 40px); padding: 1.5rem; background: rgba(26,29,36,0.7); border-radius: 10px; border: 1px solid rgba(189,0,255,0.2);">
+                        <h3 style="color: #bd00ff; margin-bottom: 0.5rem;">NEC Finalist</h3>
+                        <p style="color: rgba(255,255,255,0.7);">IIT Bombay | 2024-25</p>
+                        <p style="margin-top: 0.5rem; color: rgba(255,255,255,0.8);">
+                            • National Entrepreneurship Challenge Finalist<br>
+                            • Proudly represented our team as a finalist at NEC and took on the role of event lead for CoinDCX, contributing to the fintech community.
+                        </p>
+                    </div>
+                </div>
+                <!-- 5.CoinDCX -->
+                <div class="timeline-item" style="position: relative; margin-bottom: 3rem; width: 100%;">
+                    <div style="position: absolute; left: 50%; top: 15px; width: 20px; height: 20px; background: var(--matrix-green); border-radius: 50%; transform: translateX(-50%); z-index: 1;"></div>
+                    <div style="position: relative; width: calc(50% - 40px); padding: 1.5rem; background: rgba(26,29,36,0.7); border-radius: 10px; border: 1px solid rgba(0,255,65,0.2);">
+                        <h3 style="color: #ff00ae; margin-bottom: 0.5rem;">CoinDCX Web3 Community Event Lead</h3>
+                        <p style="margin-top: 0.5rem; color: rgba(255,255,255,0.8);">
+                            • CoinDCX Web3 Community Event Lead<br>
+                            • Successfully cleared the internal round of Smart India Hackathon, demonstrating problem-solving skills and technical expertise.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 6.Achievments -->
+                <div class="timeline-item" style="position: relative; margin-bottom: 3rem; width: 100%; text-align: right;">
+                    <div style="position: absolute; left: 50%; top: 15px; width: 20px; height: 20px; background: #bd00ff; border-radius: 50%; transform: translateX(-50%); z-index: 1;"></div>
+                    <div style="position: relative; left: calc(50% + 40px); width: calc(50% - 40px); padding: 1.5rem; background: rgba(26,29,36,0.7); border-radius: 10px; border: 1px solid rgba(189,0,255,0.2);">
+                        <h3 style="color: #94c6ff; margin-bottom: 0.5rem;">Multiple Achievements</h3>
+                        <p style="margin-top: 0.5rem; color: rgba(255,255,255,0.8);">
+                            •	Winner of Techno Maths Presentation<br><br></p>
+                        <p style="margin-top: 0.5rem; color: rgba(255,255,255,0.8);">•	Winner of Science Exhibition 2024<br><br></p>
+                        <p style="margin-top: 0.5rem; color: rgba(255,255,255,0.8);">•	CHESS INTER COLLEGE COMEPETION Winner 2023<br><br></p>
+                        <p style="margin-top: 0.5rem; color: rgba(255,255,255,0.8);">•	Cleared the internal round of Smart India Hackathon (SIH) 2024<br><br></p>
+                        <p style="margin-top: 0.5rem; color: rgba(255,255,255,0.8);">•	Participations:<br><br></p>
+                        <p style="margin-top: 0.5rem; color: rgba(255,255,255,0.8);">• Hackathons: - Hacksungum, GDSC Codespire, Pravah3.0, Hackdata’25, Build with India<br><br></p>
+                        <p style="margin-top: 0.5rem; color: rgba(255,255,255,0.8);">• Samsung Solve for Tomorrow<br>
+                                                                                        Flipkart Grid 6.0 (Robotics)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     <footer>
+        <div id = "contact" class="container">
+            <h3>Let's Build the Future Together</h3>
+            <div class="social-links">
+                <a href="https://github.com/sakshiiiii26" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/sakshi-sharma-01608a303" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/26_Sakshiiiii" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="sakshi26sharma56@gmail.com twitter" class="social-link"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>© 2024 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Other modals would follow similar structure -->
+    
+    <script>
+                // Add to your script to animate progress bars on scroll
+        const skillBars = document.querySelectorAll('.skill-progress');
+        function animateSkills() {
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => bar.style.width = width, 100);
+            });
+        }
+
+        window.addEventListener('load', animateSkills);
+                // Modal functionality
+                function openModal(project) {
+                    document.getElementById(`${project}-modal`).style.display = "block";
+                    document.body.style.overflow = "hidden";
+                }
+        
+        function closeModal(project) {
+            document.getElementById(`${project}-modal`).style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+        // Mobile menu toggle
+        const mobileBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileBtn.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        // Smooth scrolling for navbar links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if(window.innerWidth <= 992) {
+                    navLinks.style.display = 'none';
+                }
+            });
+        });
+        // Tab functionality
+        function openTab(evt, tabName) {
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+            
+            const tabButtons = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+            
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.className === "modal") {
+                event.target.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        }
+    </script>
+</body>
+</html>
