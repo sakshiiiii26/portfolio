@@ -6,15 +6,25 @@
     <title>Sakshi Sharma | AI/Data Science Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="index.css">
-    <script src = "index.js" defer></script>
+    <scripts src = "index.js" defer></scripts>
+    
 </head>
 <body>
+    <!-- Floating Background Elements -->
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <div class="logo">Sakshi Sharma</div>
             <div class="nav-links">
-                <a href="#certificate">certificate</a>
-                <a href="#work">work</a>
+                <a href="#certificate">Certificates</a>
+                <a href="#work">Work</a>
                 <a href="#projects">Projects</a>
                 <a href="#journey">Journey</a>
                 <a href="#skills">Skills</a>
@@ -25,6 +35,13 @@
             </button>
         </div>
     </nav>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+        <i class="fas fa-chevron-down"></i>
+    </div>
+
+    <!-- Header/Hero Section -->
     <header id="home">
         <div class="cyber-grid"></div>
         <div class="hero-container">
@@ -33,24 +50,24 @@
                 <div class="typewriter">Data Scientist | AI Engineer | Problem Solver</div>
                 <p>I'm a passionate and driven technology enthusiast with hands-on experience in Data science, machine learning, full-stack development and IoT integrations. I enjoy building impactful projects that solve real-world problems—ranging from AI-powered fraud detection systems to environmental monitoring platforms. With a strong foundation in Python, C++, Flask, and modern web technologies, I bring together software engineering and AI to create practical and intelligent solutions. I'm currently exploring advanced domains like federated learning, satellite image analysis, Pollution monitoring to push the boundaries of what possible.</p>
                 <div class="btn-group">
-                    <a href="#projects" class="btn">View Projects</a><br>
-                    <a href="https://leetcode.com/profile/" class="btn">Leetcode</a><br>
-                    <a href="SAKSHI SHARMA Resume.pdf" class="btn">view resume</a>
+                    <a href="#projects" class="btn">View Projects</a>
+                    <a href="https://leetcode.com/profile/" class="btn">Leetcode</a>
+                    <a href="SAKSHI SHARMA Resume.pdf" class="btn">View Resume</a>
                 </div>
             </div>
-            <div class="hero-image" >
-                <img src="images\Profile pic.jpg" alt="Sakshi Sharma">
+            <div class="hero-image">
+                <img src="images/Profile pic.jpg" alt="Sakshi Sharma">
             </div>
         </div>
-
     </header>
 
+    <!-- Projects Section -->
     <section id="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 class="section-title">Featured <span style="color: rgb(226, 95, 226)">Projects</span></h2>
             <div class="project-grid">
                 <!-- AVCR Project -->
-                <div class="project-card" onclick="openModal('avcr')">
+                <div class="project-card" onclick="openModal('avcr-modal')">
                     <img src="https://5.imimg.com/data5/SELLER/Default/2024/9/450197758/XA/WB/NF/226713088/confined-space-drone-inspection-gps-denied-drone.jpg" alt="AVCR System" class="project-img">
                     <div class="project-content">
                         <h3 class="project-title">AVCR</h3>
@@ -65,7 +82,7 @@
                 </div>
 
                 <!-- Amazon Sales ML -->
-                <div class="project-card" onclick="openModal('amazon-ml')">
+                <div class="project-card" onclick="openModal('amazon-ml-modal')">
                     <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Amazon ML" class="project-img">
                     <div class="project-content">
                         <h3 class="project-title">Amazon Sales ML</h3>
@@ -80,7 +97,7 @@
                 </div>
 
                 <!-- Fraud Detector -->
-                <div class="project-card" onclick="openModal('fraud-detector')">
+                <div class="project-card" onclick="openModal('fraud-detector-modal')">
                     <img src="https://developer-blogs.nvidia.com/wp-content/uploads/2024/10/fsi-tech-blog-fraud-detection-blueprint-1920x1080-1.jpg" alt="Fraud Detection" class="project-img">
                     <div class="project-content">
                         <h3 class="project-title">Subsidy Fraud Detector</h3>
@@ -100,7 +117,7 @@
     <!-- AVCR Modal -->
     <div id="avcr-modal" class="modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('avcr')">&times;</span>
+            <span class="close-modal" onclick="closeModal('avcr-modal')">&times;</span>
             <h2>AVCR - Autonomous Vehicle for Calamity Rescue</h2>
             
             <div class="modal-tabs">
@@ -113,7 +130,7 @@
                 <h3>Project Demonstration</h3>
                 <div class="demo-gallery">
                     <img src="https://5.imimg.com/data5/SELLER/Default/2024/9/450197758/XA/WB/NF/226713088/confined-space-drone-inspection-gps-denied-drone.jpg" alt="AVCR Hardware" class="demo-img">
-                    <img src="images\AVCR Dashboard.png" alt="Dashboard" class="demo-img">
+                    <img src="images/AVCR Dashboard.png" alt="Dashboard" class="demo-img">
                 </div>
                 <p>Real-time demo video:</p>
                 <div style="padding:56.25% 0 0 0;position:relative;">
@@ -123,7 +140,8 @@
             
             <div id="avcr-code" class="tab-content">
                 <h3>Key Code Snippets</h3>
-                <pre><code class="language-python">
+                <div class="terminal-effect">
+                    <pre><code class="language-python">
 # Gas Level Prediction Model (LSTM)
 import tensorflow as tf
 from tensorflow.keras.models import Sequential
@@ -137,9 +155,11 @@ model = Sequential([
 
 model.compile(optimizer='adam', loss='mse')
 model.fit(X_train, y_train, epochs=50)
-                </code></pre>
+                    </code></pre>
+                </div>
                 
-                <pre><code class="language-python">
+                <div class="terminal-effect">
+                    <pre><code class="language-python">
 # ESP32 Sensor Data Collection
 import machine
 from machine import Pin, I2C
@@ -154,7 +174,8 @@ while True:
     data = f"{gas},{temp},{hum}"
     send_via_lora(data)
     time.sleep(1)
-                </code></pre>
+                    </code></pre>
+                </div>
                 
                 <a href="https://github.com/sakshiiiii26/AVCR" class="btn" target="_blank">View Full Repository</a>
             </div>
@@ -184,8 +205,8 @@ while True:
     <!-- Amazon analysis -->
     <div id="amazon-ml-modal" class="modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('amazon-ml')">&times;</span>
-            <h2>AVCR - Autonomous Vehicle for Calamity Rescue</h2>
+            <span class="close-modal" onclick="closeModal('amazon-ml-modal')">&times;</span>
+            <h2>Amazon Sales Analysis & ML</h2>
             
             <div class="modal-tabs">
                 <button class="tab-btn active" onclick="openTab(event, 'amazon-ml-demo')">Demo</button>
@@ -197,9 +218,9 @@ while True:
                 <h3>Project Demonstration</h3>
                 <div class="demo-gallery">
                     <img src="https://github.com/sakshiiiii26/Amazon_ML_Analysis/blob/main/2025-04-14.png?raw=true" alt="Dashboard" class="demo-img">
-                    <img src="images\amazon home.png" alt="Dashboard" class="demo-img">
-                    <img src="images\amazon sales overview.png" alt="Dashboard" class="demo-img">
-                    <img src="images\customer overview.png" alt="Dashboard" class="demo-img">
+                    <img src="images/amazon home.png" alt="Dashboard" class="demo-img">
+                    <img src="images/amazon sales overview.png" alt="Dashboard" class="demo-img">
+                    <img src="images/customer overview.png" alt="Dashboard" class="demo-img">
                     <img src="https://github.com/sakshiiiii26/Amazon_Sales_Analysis/blob/main/fulfillment%20analysis.png?raw=true" alt="Dashboard" class="demo-img">
                     <img src="https://github.com/sakshiiiii26/Amazon_Sales_Analysis/blob/main/geographical%20analysis.png?raw=true" alt="Dashboard" class="demo-img">
                     <img src="https://github.com/sakshiiiii26/Amazon_Sales_Analysis/blob/main/product%20analysis.png?raw=true" alt="Dashboard" class="demo-img">
@@ -209,43 +230,45 @@ while True:
             
             <div id="amazon-ml-code" class="tab-content">
                 <h3>Key Code Snippets</h3>
+                <div class="terminal-effect">
+                    <pre><code class="language-python">
+# customer segmentation
+import pandas as pd
+from sklearn.cluster import KMeans
+from sklearn.preprocessing import StandardScaler
 
-            
-                <pre><code class="language-python">
-                    # customer segmentation
-                    import pandas as pd
-                    from sklearn.cluster import KMeans
-                    from sklearn.preprocessing import StandardScaler
+df1 = NewDf
 
-                    df1 = NewDf
+X = df1[['discounted_price', 'rating_count']]
+# X = X.fillna(0)
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
 
-                    X = df1[['discounted_price', 'rating_count']]
-                    # X = X.fillna(0)
-                    scaler = StandardScaler()
-                    X_scaled = scaler.fit_transform(X)
-
-                    kmeans = KMeans(n_clusters=3, random_state=42)
-                    df1['Customer_Segment'] = kmeans.fit_predict(X_scaled)
-                    NewDf['Customer_Segment'] = df1['Customer_Segment']
-                    output = NewDf
-                    output
-                </code></pre>
+kmeans = KMeans(n_clusters=3, random_state=42)
+df1['Customer_Segment'] = kmeans.fit_predict(X_scaled)
+NewDf['Customer_Segment'] = df1['Customer_Segment']
+output = NewDf
+output
+                    </code></pre>
+                </div>
                 
-                <pre><code class="language-python">
-                    # sales prediction
-                    import numpy as np
+                <div class="terminal-effect">
+                    <pre><code class="language-python">
+# sales prediction
+import numpy as np
 
-                    df = NewDf.copy()
+df = NewDf.copy()
 
-                    if 'sales' not in df.columns:
-                        df['sales'] = df['rating_count'] * df['discounted_price']
+if 'sales' not in df.columns:
+    df['sales'] = df['rating_count'] * df['discounted_price']
 
-                    df['log_sales'] = np.log1p(df['sales'])
+df['log_sales'] = np.log1p(df['sales'])
 
-                    df['sales'] = df['sales'].astype(float)
-                    df['rating'] = df['rating'].astype(float)
-                    df['rating_count'] = df['rating_count'].astype(float)
-                </code></pre>
+df['sales'] = df['sales'].astype(float)
+df['rating'] = df['rating'].astype(float)
+df['rating_count'] = df['rating_count'].astype(float)
+                    </code></pre>
+                </div>
                 <a href="https://github.com/sakshiiiii26/Amazon_ML_Analysis" class="btn" target="_blank">View Full Repository Amazon ML</a><br>
                 <a href="https://github.com/sakshiiiii26/Amazon_Sales_Analysis" class="btn" target="_blank">View Full Repository Amazon Sales analysis</a>
             </div>
@@ -270,7 +293,6 @@ while True:
                         <li>Opportunities to increase Average Order Value through bundling and upselling</li>
                         <li>Enhanced focus on consistent sales flow using weekday flash deals and reminder tactics</li>
                     </ul>
-
             </div>
         </div>
     </div>
@@ -278,8 +300,8 @@ while True:
     <!-- Subsidy Fraud Detection -->
     <div id="fraud-detector-modal" class="modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('fraud-detector-ml')">&times;</span>
-            <h2>AVCR - Autonomous Vehicle for Calamity Rescue</h2>
+            <span class="close-modal" onclick="closeModal('fraud-detector-modal')">&times;</span>
+            <h2>Subsidy Fraud Detection System</h2>
             
             <div class="modal-tabs">
                 <button class="tab-btn active" onclick="openTab(event, 'fraud-detector-demo')">Demo</button>
@@ -291,55 +313,59 @@ while True:
                 <h3>Project Demonstration</h3>
                 <p>Real-time demo video:</p>
                 <div style="padding:56.25% 0 0 0;position:relative;">
-                    <iframe src="images\subsidy_fraud_detection.ipynb - Colab - Google Chrome 2025-05-22 16-32-45.mp4" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <iframe src="images/subsidy_fraud_detection.ipynb - Colab - Google Chrome 2025-05-22 16-32-45.mp4" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                 </div>
             </div>
             
             <div id="fraud-detector-code" class="tab-content">
                 <h3>Key Code Snippets</h3>
-                <pre><code class="language-python">
-                # data generation
-                    import pandas as pd
-                    import numpy as np
-
-                    np.random.seed(42)
-                    n_samples = 5000
-                    data = pd.DataFrame({
-                    'applicant_income': np.random.normal(loc=35000, scale=8000, size=n_samples).clip(5000, 100000),
-                    'claimed_subsidy_amount': np.random.normal(loc=7000, scale=1500, size=n_samples).clip(1000, 15000),
-                    'land_owned_acres': np.random.uniform(0.2, 8.0, size=n_samples),
-                    'number_of_dependents': np.random.randint(0, 7, size=n_samples),
-                    'region': np.random.choice(['North', 'South', 'East', 'West'], size=n_samples),
-                    previous_claims': np.random.poisson(1.0, size=n_samples),
-                    'is_employed': np.random.choice([0, 1], size=n_samples, p=[0.3, 0.7])
-                        })
-                    </code></pre>
+                <div class="terminal-effect">
                     <pre><code class="language-python">
-                    # data preprocessing
-                    import pandas as pd
-                    import numpy as np
-                    from sklearn.model_selection import train_test_split
-                    from sklearn.preprocessing import OneHotEncoder, StandardScaler
-                    from sklearn.ensemble import RandomForestClassifier
-                    from sklearn.metrics import classification_report, confusion_matrix
+# data generation
+import pandas as pd
+import numpy as np
 
-                    # Load dataset
-                    df = pd.read_csv("synthetic_subsidy_data.csv")
+np.random.seed(42)
+n_samples = 5000
+data = pd.DataFrame({
+'applicant_income': np.random.normal(loc=35000, scale=8000, size=n_samples).clip(5000, 100000),
+'claimed_subsidy_amount': np.random.normal(loc=7000, scale=1500, size=n_samples).clip(1000, 15000),
+'land_owned_acres': np.random.uniform(0.2, 8.0, size=n_samples),
+'number_of_dependents': np.random.randint(0, 7, size=n_samples),
+'region': np.random.choice(['North', 'South', 'East', 'West'], size=n_samples),
+'previous_claims': np.random.poisson(1.0, size=n_samples),
+'is_employed': np.random.choice([0, 1], size=n_samples, p=[0.3, 0.7])
+})
+                    </code></pre>
+                </div>
+                
+                <div class="terminal-effect">
+                    <pre><code class="language-python">
+# data preprocessing
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report, confusion_matrix
 
-                    # Separate features and target
-                    X = df.drop("is_fraud", axis=1)
-                    y = df["is_fraud"]
+# Load dataset
+df = pd.read_csv("synthetic_subsidy_data.csv")
 
-                    # One-hot encode categorical variables
-                    categorical_cols = ["subsidy_type", "location"]
-                    encoder = OneHotEncoder(sparse_output=False, drop="first")
-                    X_encoded = encoder.fit_transform(X[categorical_cols])
+# Separate features and target
+X = df.drop("is_fraud", axis=1)
+y = df["is_fraud"]
 
-                    # Drop original categorical columns and combine encoded features
-                    X_numeric = X.drop(columns=categorical_cols)
-                    X_final = np.concatenate([X_numeric.values, X_encoded], axis=1)
+# One-hot encode categorical variables
+categorical_cols = ["subsidy_type", "location"]
+encoder = OneHotEncoder(sparse_output=False, drop="first")
+X_encoded = encoder.fit_transform(X[categorical_cols])
 
-                </code></pre>
+# Drop original categorical columns and combine encoded features
+X_numeric = X.drop(columns=categorical_cols)
+X_final = np.concatenate([X_numeric.values, X_encoded], axis=1)
+                    </code></pre>
+                </div>
                 <a href="https://github.com/sakshiiiii26/subsidy_fraud_detection" class="btn" target="_blank">View Full Repository</a>
             </div>
             
@@ -347,36 +373,128 @@ while True:
                 <h3>Project Details</h3>
                 <p><strong>Problem Statement:</strong> Rising number of fraudulent claims in government subsidy programs causes financial losses and delays genuine aid delivery.</p>
 
-                    <p><strong>Solution:</strong></p>
-                    <ul>
-                        <li>Machine Learning model (Random Forest) trained on structured subsidy application data</li>
-                        <li>Web-based application with role-based login for applicants, officials, and admins</li>
-                        <li>Real-time fraud score prediction using Flask API</li>
-                        <li>Dashboard for fraud analytics and trend visualization</li>
-                    </ul>
+                <p><strong>Solution:</strong></p>
+                <ul>
+                    <li>Machine Learning model (Random Forest) trained on structured subsidy application data</li>
+                    <li>Web-based application with role-based login for applicants, officials, and admins</li>
+                    <li>Real-time fraud score prediction using Flask API</li>
+                    <li>Dashboard for fraud analytics and trend visualization</li>
+                </ul>
 
-                    <p><strong>Results:</strong></p>
-                    <ul>
-                        <li>95% accuracy in detecting fraudulent applications using synthetic + modeled data</li>
-                        <li>Reduced manual verification effort by 60%</li>
-                        <li>Presented at DataHack 2025; shortlisted among top 5 national entries</li>
-                    </ul>
+                <p><strong>Results:</strong></p>
+                <ul>
+                    <li>95% accuracy in detecting fraudulent applications using synthetic + modeled data</li>
+                    <li>Reduced manual verification effort by 60%</li>
+                    <li>Presented at DataHack 2025; shortlisted among top 5 national entries</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
+    <!-- Potholes Detection -->
+    <div id="fraud-detector-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('fraud-detector-modal')">&times;</span>
+            <h2>Subsidy Fraud Detection System</h2>
+            
+            <div class="modal-tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'fraud-detector-demo')">Demo</button>
+                <button class="tab-btn" onclick="openTab(event, 'fraud-detector-code')">Code</button>
+                <button class="tab-btn" onclick="openTab(event, 'fraud-detector-details')">Details</button>
+            </div>
+            
+            <div id="fraud-detector-demo" class="tab-content active">
+                <h3>Project Demonstration</h3>
+                <p>Real-time demo video:</p>
+                <div style="padding:56.25% 0 0 0;position:relative;">
+                    <iframe src="images/subsidy_fraud_detection.ipynb - Colab - Google Chrome 2025-05-22 16-32-45.mp4" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+            <div id="fraud-detector-code" class="tab-content">
+                <h3>Key Code Snippets</h3>
+                <div class="terminal-effect">
+                    <pre><code class="language-python">
+# data generation
+import pandas as pd
+import numpy as np
+
+np.random.seed(42)
+n_samples = 5000
+data = pd.DataFrame({
+'applicant_income': np.random.normal(loc=35000, scale=8000, size=n_samples).clip(5000, 100000),
+'claimed_subsidy_amount': np.random.normal(loc=7000, scale=1500, size=n_samples).clip(1000, 15000),
+'land_owned_acres': np.random.uniform(0.2, 8.0, size=n_samples),
+'number_of_dependents': np.random.randint(0, 7, size=n_samples),
+'region': np.random.choice(['North', 'South', 'East', 'West'], size=n_samples),
+'previous_claims': np.random.poisson(1.0, size=n_samples),
+'is_employed': np.random.choice([0, 1], size=n_samples, p=[0.3, 0.7])
+})
+                    </code></pre>
+                </div>
+                
+                <div class="terminal-effect">
+                    <pre><code class="language-python">
+# data preprocessing
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report, confusion_matrix
+
+# Load dataset
+df = pd.read_csv("synthetic_subsidy_data.csv")
+
+# Separate features and target
+X = df.drop("is_fraud", axis=1)
+y = df["is_fraud"]
+
+# One-hot encode categorical variables
+categorical_cols = ["subsidy_type", "location"]
+encoder = OneHotEncoder(sparse_output=False, drop="first")
+X_encoded = encoder.fit_transform(X[categorical_cols])
+
+# Drop original categorical columns and combine encoded features
+X_numeric = X.drop(columns=categorical_cols)
+X_final = np.concatenate([X_numeric.values, X_encoded], axis=1)
+                    </code></pre>
+                </div>
+                <a href="https://github.com/sakshiiiii26/subsidy_fraud_detection" class="btn" target="_blank">View Full Repository</a>
+            </div>
+            
+            <div id="fraud-detector-details" class="tab-content">
+                <h3>Project Details</h3>
+                <p><strong>Problem Statement:</strong> Rising number of fraudulent claims in government subsidy programs causes financial losses and delays genuine aid delivery.</p>
+
+                <p><strong>Solution:</strong></p>
+                <ul>
+                    <li>Machine Learning model (Random Forest) trained on structured subsidy application data</li>
+                    <li>Web-based application with role-based login for applicants, officials, and admins</li>
+                    <li>Real-time fraud score prediction using Flask API</li>
+                    <li>Dashboard for fraud analytics and trend visualization</li>
+                </ul>
+
+                <p><strong>Results:</strong></p>
+                <ul>
+                    <li>95% accuracy in detecting fraudulent applications using synthetic + modeled data</li>
+                    <li>Reduced manual verification effort by 60%</li>
+                    <li>Presented at DataHack 2025; shortlisted among top 5 national entries</li>
+                </ul>
             </div>
         </div>
     </div>
 
 
-    <!-- ===== work ===== -->
+    <!-- Work Section -->
     <section id="work">
-        <iframe src="work.html" width="100%" height="2300px" style="border: none;"></iframe>
+        <iframe src="work.html" width="100%" height="2870px" style="border: none;"></iframe>
     </section>
 
-
-<!-- Skills section -->
+    <!-- Skills Section -->
     <section id="skills">
         <div class="container">
-            <h2 class="section-title">Technical <span style="color: var(--neon-purple)">Proficiency</span></h2>
+            <h2 class="section-title">Technical <span style="color: rgb(230, 98, 230)">Proficiency</span></h2>
             <div class="skills-container">
                 <!-- Machine Learning/AI -->
                 <div class="skill-category">
@@ -417,6 +535,24 @@ while True:
                             <div class="skill-progress" style="width: 90%; background: linear-gradient(90deg, var(--neon-blue), #00ff88);"></div>
                         </div>
                     </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Computer Vision</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%; background: linear-gradient(90deg, var(--neon-blue), #00ff88);"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Libraries: Scikit-learn, TensorFlow</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%; background: linear-gradient(90deg, var(--neon-blue), #00ff88);"></div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Data Engineering -->
@@ -424,7 +560,7 @@ while True:
                     <h3><i class="fas fa-database"></i> Data Engineering</h3>
                     <div class="skill-item">
                         <div class="skill-name">
-                            <span>Python (Pandas/NumPy)</span>
+                            <span>Python (for ML & Backend)</span>
                             <span>95%</span>
                         </div>
                         <div class="skill-bar">
@@ -433,7 +569,16 @@ while True:
                     </div>
                     <div class="skill-item">
                         <div class="skill-name">
-                            <span>SQL (Amazon Analysis)</span>
+                            <span>Data Analysis and Transformation</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%; background: linear-gradient(90deg, var(--neon-pink), #bd00ff);"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>SQL (Data Querying)</span>
                             <span>90%</span>
                         </div>
                         <div class="skill-bar">
@@ -442,8 +587,8 @@ while True:
                     </div>
                     <div class="skill-item">
                         <div class="skill-name">
-                            <span>Power BI/Tableau</span>
-                            <span>87%</span>
+                            <span>Power BI (Data Visualization & EDA)</span>
+                            <span>95%</span>
                         </div>
                         <div class="skill-bar">
                             <div class="skill-progress" style="width: 87%; background: linear-gradient(90deg, var(--neon-pink), #bd00ff);"></div>
@@ -452,7 +597,7 @@ while True:
                     <div class="skill-item">
                         <div class="skill-name">
                             <span>Data Visualization</span>
-                            <span>89%</span>
+                            <span>92%</span>
                         </div>
                         <div class="skill-bar">
                             <div class="skill-progress" style="width: 89%; background: linear-gradient(90deg, var(--neon-pink), #bd00ff);"></div>
@@ -506,8 +651,17 @@ while True:
                     <h3><i class="fas fa-tools"></i> Tools & Frameworks</h3>
                     <div class="skill-item">
                         <div class="skill-name">
-                            <span>Flask (AVCR Dashboard)</span>
-                            <span>83%</span>
+                            <span>Flask</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 83%; background: linear-gradient(90deg, #ff9a00, #ff2d75);"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Django</span>
+                            <span>85%</span>
                         </div>
                         <div class="skill-bar">
                             <div class="skill-progress" style="width: 83%; background: linear-gradient(90deg, #ff9a00, #ff2d75);"></div>
@@ -533,7 +687,25 @@ while True:
                     </div>
                     <div class="skill-item">
                         <div class="skill-name">
-                            <span>Scikit-learn</span>
+                            <span>HTML, CSS, Bootstrap (Frontend basics)</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 91%; background: linear-gradient(90deg, #ff9a00, #ff2d75);"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>OpenCV</span>
+                            <span>87%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 91%; background: linear-gradient(90deg, #ff9a00, #ff2d75);"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Jupyter Notebook, VS Code</span>
                             <span>91%</span>
                         </div>
                         <div class="skill-bar">
@@ -545,16 +717,15 @@ while True:
         </div>
     </section>
 
-<!-- ===== certificates ===== -->
+    <!-- Certificates Section -->
     <section id="certificate">
         <iframe src="certification.html" width="100%" height="1100px" style="border: none;"></iframe>
     </section>
 
-
-    <!-- ===== UPDATED TIMELINE SECTION ===== -->
-    <section id="journey" style="padding: 5rem 0; background: rgba(189,0,255,0.03);">
+   <!-- ===== UPDATED TIMELINE SECTION ===== -->
+    <section id="journey" style="padding: 5rem 0;">
         <div class="container">
-            <h2 class="section-title">My <span style="color: var(--neon-pink)">Journey</span></h2>
+            <h2 class="section-title">My <span style="color: palevioletred">Journey</span></h2>
             <div class="timeline" style="position: relative; max-width: 800px; margin: 0 auto; padding: 2rem 0;">
                 <!-- Timeline line -->
                 <div style="position: absolute; left: 50%; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, var(--neon-blue), var(--neon-pink)); transform: translateX(-50%);"></div>
@@ -562,31 +733,31 @@ while True:
                 <!-- 1. B.A.D Talks -->
                 <div class="timeline-item" style="position: relative; margin-bottom: 3rem; width: 100%;">
                     <div style="position: absolute; left: 50%; top: 15px; width: 20px; height: 20px; background: var(--neon-pink); border-radius: 50%; transform: translateX(-50%); z-index: 1;"></div>
-                    <div style="position: relative; width: calc(50% - 40px); padding: 1.5rem; background: rgba(26,29,36,0.7); border-radius: 10px; border: 1px solid rgba(255,45,117,0.2);">
-                        <h3 style="color: var(--neon-pink); margin-bottom: 0.5rem;">Core Team Member</h3>
-                        <p style="color: rgba(255,255,255,0.7);">B.A.D Talks - IPS Academy</p>
-                        <p style="color: var(--cyber-blue);">2024</p>
-                        <p style="margin-top: 0.5rem; color: rgba(255,255,255,0.8);">Started my leadership journey by organizing tech talks and workshops for students. Joined Bed Talks as a co-team member, collaborating on impactful discussions and gaining experience in event management and communication.</p>
+                    <div style="position: relative; width: calc(50% - 40px); padding: 1.5rem; background: linear-gradient(45deg, #bc69b3, #66e2eb);; border-radius: 10px; border: 1px solid rgba(255,45,117,0.2);">
+                        <h3 style="color: rgb(128, 0, 41); margin-bottom: 0.5rem;">Core Team Member</h3>
+                        <p style="color: black;">B.A.D Talks - IPS Academy</p>
+                        <p style="color: black;">2024</p>
+                        <p style="margin-top: 0.5rem; color: black;">Started my leadership journey by organizing tech talks and workshops for students. Joined Bed Talks as a co-team member, collaborating on impactful discussions and gaining experience in event management and communication.</p>
                     </div>
                 </div>
                 
                 <!-- 2. E-Cell Founder -->
                 <div class="timeline-item" style="position: relative; margin-bottom: 3rem; width: 100%; text-align: right;">
                     <div style="position: absolute; left: 50%; top: 15px; width: 20px; height: 20px; background: var(--cyber-blue); border-radius: 50%; transform: translateX(-50%); z-index: 1;"></div>
-                    <div style="position: relative; left: calc(50% + 40px); width: calc(50% - 40px); padding: 1.5rem; background: rgba(26,29,36,0.7); border-radius: 10px; border: 1px solid rgba(0,245,255,0.2);">
-                        <h3 style="color: var(--cyber-blue); margin-bottom: 0.5rem;">Founder, E-Cell</h3>
-                        <p style="color: rgba(255,255,255,0.7);">IPS Academy x IIT Bombay</p>
+                    <div style="position: relative; left: calc(50% + 40px); width: calc(50% - 40px); padding: 1.5rem; background: linear-gradient(45deg, #bc69b3, #66e2eb);; border-radius: 10px; border: 1px solid rgba(0,245,255,0.2);">
+                        <h3 style="color: rgb(7, 87, 119); margin-bottom: 0.5rem;">Founder, E-Cell</h3>
+                        <p style="color:  black;">IPS Academy x IIT Bombay</p>
                         <p style="color: var(--neon-pink);">2024</p>
-                        <p style="margin-top: 0.5rem; color: rgba(255,255,255,0.8);">Established entrepreneurship cell to foster innovation and startup culture.</p>
+                        <p style="margin-top: 0.5rem; color: black;">Established entrepreneurship cell to foster innovation and startup culture.</p>
                     </div>
                 </div>
                 
                 <!-- 3. IITB Ambassador -->
                 <div class="timeline-item" style="position: relative; margin-bottom: 3rem; width: 100%;">
                     <div style="position: absolute; left: 50%; top: 15px; width: 20px; height: 20px; background: var(--matrix-green); border-radius: 50%; transform: translateX(-50%); z-index: 1;"></div>
-                    <div style="position: relative; width: calc(50% - 40px); padding: 1.5rem; background: rgba(26,29,36,0.7); border-radius: 10px; border: 1px solid rgba(0,255,65,0.2);">
-                        <h3 style="color: var(--matrix-green); margin-bottom: 0.5rem;">Top 100 Campus Ambassador</h3>
-                        <p style="color: rgba(255,255,255,0.7);">Certificate of Merit: Ranked in the top 100 from IIT Bombay for completing the Campus Ambassador Program and securing a position in the top 100 on the global leaderboard.</p>
+                    <div style="position: relative; width: calc(50% - 40px); padding: 1.5rem; background: linear-gradient(45deg, #bc69b3, #66e2eb);; border-radius: 10px; border: 1px solid rgba(0,255,65,0.2);">
+                        <h3 style="color: green; margin-bottom: 0.5rem;">Top 100 Campus Ambassador</h3>
+                        <p style="color:  black;">Certificate of Merit: Ranked in the top 100 from IIT Bombay for completing the Campus Ambassador Program and securing a position in the top 100 on the global leaderboard.</p>
                         <p style="color: var(--neon-pink);">2024</p>
                     </div>
                 </div>
@@ -594,10 +765,10 @@ while True:
                 <!-- 4. NEC Finalist-->
                 <div class="timeline-item" style="position: relative; margin-bottom: 3rem; width: 100%; text-align: right;">
                     <div style="position: absolute; left: 50%; top: 15px; width: 20px; height: 20px; background: #bd00ff; border-radius: 50%; transform: translateX(-50%); z-index: 1;"></div>
-                    <div style="position: relative; left: calc(50% + 40px); width: calc(50% - 40px); padding: 1.5rem; background: rgba(26,29,36,0.7); border-radius: 10px; border: 1px solid rgba(189,0,255,0.2);">
-                        <h3 style="color: #bd00ff; margin-bottom: 0.5rem;">NEC Finalist</h3>
-                        <p style="color: rgba(255,255,255,0.7);">IIT Bombay | 2024-25</p>
-                        <p style="margin-top: 0.5rem; color: rgba(255,255,255,0.8);">
+                    <div style="position: relative; left: calc(50% + 40px); width: calc(50% - 40px); padding: 1.5rem; background: linear-gradient(45deg, #bc69b3, #66e2eb);; border-radius: 10px; border: 1px solid rgba(189,0,255,0.2);">
+                        <h3 style="color: #69028e; margin-bottom: 0.5rem;">NEC Finalist</h3>
+                        <p style="color: black;">IIT Bombay | 2024-25</p>
+                        <p style="margin-top: 0.5rem; color: rgba(0, 0, 0);">
                             • National Entrepreneurship Challenge Finalist<br>
                             • Proudly represented our team as a finalist at NEC and took on the role of event lead for CoinDCX, contributing to the fintech community.
                         </p>
@@ -606,9 +777,9 @@ while True:
                 <!-- 5.CoinDCX -->
                 <div class="timeline-item" style="position: relative; margin-bottom: 3rem; width: 100%;">
                     <div style="position: absolute; left: 50%; top: 15px; width: 20px; height: 20px; background: var(--matrix-green); border-radius: 50%; transform: translateX(-50%); z-index: 1;"></div>
-                    <div style="position: relative; width: calc(50% - 40px); padding: 1.5rem; background: rgba(26,29,36,0.7); border-radius: 10px; border: 1px solid rgba(0,255,65,0.2);">
-                        <h3 style="color: #ff00ae; margin-bottom: 0.5rem;">CoinDCX Web3 Community Event Lead</h3>
-                        <p style="margin-top: 0.5rem; color: rgba(255,255,255,0.8);">
+                    <div style="position: relative; width: calc(50% - 40px); padding: 1.5rem; background: linear-gradient(45deg, #bc69b3, #66e2eb);; border-radius: 10px; border: 1px solid rgba(0,255,65,0.2);">
+                        <h3 style="color: #680649; margin-bottom: 0.5rem;">CoinDCX Web3 Community Event Lead</h3>
+                        <p style="margin-top: 0.5rem; color: rgba(0, 0, 0);">
                             • CoinDCX Web3 Community Event Lead<br>
                             • Successfully cleared the internal round of Smart India Hackathon, demonstrating problem-solving skills and technical expertise.
                         </p>
@@ -618,35 +789,328 @@ while True:
                 <!-- 6.Achievments -->
                 <div class="timeline-item" style="position: relative; margin-bottom: 3rem; width: 100%; text-align: right;">
                     <div style="position: absolute; left: 50%; top: 15px; width: 20px; height: 20px; background: #bd00ff; border-radius: 50%; transform: translateX(-50%); z-index: 1;"></div>
-                    <div style="position: relative; left: calc(50% + 40px); width: calc(50% - 40px); padding: 1.5rem; background: rgba(26,29,36,0.7); border-radius: 10px; border: 1px solid rgba(189,0,255,0.2);">
-                        <h3 style="color: #94c6ff; margin-bottom: 0.5rem;">Multiple Achievements</h3>
-                        <p style="margin-top: 0.5rem; color: rgba(255,255,255,0.8);">
+                    <div style="position: relative; left: calc(50% + 40px); width: calc(50% - 40px); padding: 1.5rem; background: linear-gradient(45deg, #bc69b3, #66e2eb);; border: 1px solid rgba(189,0,255,0.2);">
+                        <h3 style="color: #160051; margin-bottom: 0.5rem;">Multiple Achievements</h3>
+                        <p style="margin-top: 0.5rem; color:  black;">
                             •	Winner of Techno Maths Presentation<br><br></p>
-                        <p style="margin-top: 0.5rem; color: rgba(255,255,255,0.8);">•	Winner of Science Exhibition 2024<br><br></p>
-                        <p style="margin-top: 0.5rem; color: rgba(255,255,255,0.8);">•	CHESS INTER COLLEGE COMEPETION Winner 2023<br><br></p>
-                        <p style="margin-top: 0.5rem; color: rgba(255,255,255,0.8);">•	Cleared the internal round of Smart India Hackathon (SIH) 2024<br><br></p>
-                        <p style="margin-top: 0.5rem; color: rgba(255,255,255,0.8);">•	Participations:<br><br></p>
-                        <p style="margin-top: 0.5rem; color: rgba(255,255,255,0.8);">• Hackathons: - Hacksungum, GDSC Codespire, Pravah3.0, Hackdata’25, Build with India<br><br></p>
-                        <p style="margin-top: 0.5rem; color: rgba(255,255,255,0.8);">• Samsung Solve for Tomorrow<br>
+                        <p style="margin-top: 0.5rem; color: black;">•	Winner of Science Exhibition 2024<br><br></p>
+                        <p style="margin-top: 0.5rem; color: black;">•	CHESS INTER COLLEGE COMEPETION Winner 2023<br><br></p>
+                        <p style="margin-top: 0.5rem; color:  black;">•	Cleared the internal round of Smart India Hackathon (SIH) 2024<br><br></p>
+                        <p style="margin-top: 0.5rem; color:  black;">•	Participations:<br><br></p>
+                        <p style="margin-top: 0.5rem; color:  black;">• Hackathons: - Hacksungum, GDSC Codespire, Pravah3.0, Hackdata’25, Build with India<br><br></p>
+                        <p style="margin-top: 0.5rem; color:  black;">• Samsung Solve for Tomorrow<br>
                                                                                         Flipkart Grid 6.0 (Robotics)</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-     <footer>
-        <div id = "contact" class="container">
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
             <h3>Let's Build the Future Together</h3>
             <div class="social-links">
                 <a href="https://github.com/sakshiiiii26" class="social-link"><i class="fab fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/sakshi-sharma-01608a303" class="social-link"><i class="fab fa-linkedin"></i></a>
                 <a href="https://x.com/26_Sakshiiiii" class="social-link"><i class="fab fa-twitter"></i></a>
-                <a href="sakshi26sharma56@gmail.com twitter" class="social-link"><i class="fas fa-envelope"></i></a>
+                <a href="mailto:sakshi26sharma56@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
             </div>
-            <p>© 2024 Your Name. All rights reserved.</p>
+            <p>© 2024 Sakshi Sharma. All rights reserved.</p>
         </div>
     </footer>
-    
-    
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Modal functionality
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function openTab(evt, tabName) {
+            const tabContents = document.querySelectorAll('.tab-content');
+            const tabButtons = document.querySelectorAll('.tab-btn');
+
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal')) {
+                e.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Animate skill bars on scroll
+        const skillBars = document.querySelectorAll('.skill-progress');
+        
+        function animateSkillBars() {
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        }
+
+        // Initialize particles.js
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#00f5ff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.3,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#00f5ff",
+                    "opacity": 0.2,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+
+        // Scroll reveal animation
+        const sr = ScrollReveal({
+            origin: 'top',
+            distance: '60px',
+            duration: 1000,
+            delay: 200,
+            reset: true
+        });
+
+        sr.reveal('.hero-content, .hero-image', { delay: 300 });
+        sr.reveal('.project-card, .skill-category, .timeline-item', { interval: 200 });
+
+        // Animate elements when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    if (entry.target.classList.contains('skill-progress')) {
+                        animateSkillBars();
+                    }
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.skill-progress, .project-card, .timeline-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Scroll to top button
+        const scrollTopBtn = document.createElement('div');
+        scrollTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+        scrollTopBtn.style.position = 'fixed';
+        scrollTopBtn.style.bottom = '30px';
+        scrollTopBtn.style.right = '30px';
+        scrollTopBtn.style.backgroundColor = 'rgba(0, 245, 255, 0.2)';
+        scrollTopBtn.style.color = 'var(--neon-blue)';
+        scrollTopBtn.style.width = '50px';
+        scrollTopBtn.style.height = '50px';
+        scrollTopBtn.style.borderRadius = '50%';
+        scrollTopBtn.style.display = 'flex';
+        scrollTopBtn.style.justifyContent = 'center';
+        scrollTopBtn.style.alignItems = 'center';
+        scrollTopBtn.style.cursor = 'pointer';
+        scrollTopBtn.style.transition = 'all 0.3s ease';
+        scrollTopBtn.style.zIndex = '100';
+        scrollTopBtn.style.border = '1px solid var(--neon-blue)';
+        scrollTopBtn.style.opacity = '0';
+        scrollTopBtn.style.pointerEvents = 'none';
+        document.body.appendChild(scrollTopBtn);
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.style.opacity = '1';
+                scrollTopBtn.style.pointerEvents = 'auto';
+            } else {
+                scrollTopBtn.style.opacity = '0';
+                scrollTopBtn.style.pointerEvents = 'none';
+            }
+        });
+
+        // Typewriter effect
+        const typewriterElement = document.querySelector('.typewriter');
+        const phrases = [
+            "Data Scientist",
+            "AI Engineer", 
+            "Problem Solver",
+            "Machine Learning Enthusiast",
+            "IoT Developer"
+        ];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let isEnd = false;
+
+        function typeWriter() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                typewriterElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typewriterElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                isEnd = true;
+                isDeleting = true;
+                setTimeout(typeWriter, 2000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                setTimeout(typeWriter, 500);
+            } else {
+                const speed = isDeleting ? 100 : 150;
+                setTimeout(typeWriter, speed);
+            }
+        }
+
+        // Start the typewriter effect
+        setTimeout(typeWriter, 1000);
+    </script>
 </body>
 </html>
